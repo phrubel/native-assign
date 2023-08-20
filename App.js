@@ -5,6 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Home from './src/screens/Home';
 import Order from './src/screens/Order';
+import Covid from './src/screens/Covid';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,8 +14,9 @@ export default function App() {
     <>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-          {/* <Stack.Screen name="Home" component={Home} /> */}
+          <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Order" component={Order} />
+          <Stack.Screen name="Covid" component={Covid} />
         </Stack.Navigator>
       </NavigationContainer>
       <StatusBar style="auto" />

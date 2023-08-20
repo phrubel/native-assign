@@ -1,8 +1,11 @@
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, Pressable } from 'react-native';
 import React from 'react';
 import { AntDesign } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Order() {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <Image
@@ -41,12 +44,15 @@ export default function Order() {
             <AntDesign name="hearto" size={24} color="black" />
           </View>
 
-          <View style={styles.addToCart}>
+          <Pressable
+            onPress={() => navigation.navigate('Covid')}
+            style={styles.addToCart}
+          >
             <View style={styles.iconText}>
               <AntDesign name="shoppingcart" size={24} color="white" />
               <Text style={styles.buttonText}>Add To Cart</Text>
             </View>
-          </View>
+          </Pressable>
         </View>
       </View>
     </View>
